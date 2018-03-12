@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import SearchBar from './containers/search_bar';
+import './App.css';
+import logo from './logo.svg';
+import logoRedux from './logoRedux.svg';
 
 class App extends Component {
     render() {
@@ -9,6 +10,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
+                    <img src={logoRedux} className="App-logo" alt="logo" />
                     <h1 className="App-title">WeatherApp-ReactRedux</h1>
                 </header>
                 <SearchBar />

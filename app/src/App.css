@@ -30,7 +30,6 @@
   to { transform: rotate(360deg); }
 }
 
-.Container {
-    width: 80%;
-
+.searchBarTopPadding {
+    padding-top: 1.5%;
 }
