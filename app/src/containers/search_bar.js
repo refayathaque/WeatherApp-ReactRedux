@@ -30,7 +30,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <form className="input-group mb3 + searchBarTopPadding" onSubmit={this.onFormSubmit}>
+            <form className="input-group mb3 + topPadding" onSubmit={this.onFormSubmit}>
                 <input type="text" className="form-control" placeholder="Get a five-day forecast in your favorite cities" aria-label="Get a five-day forecast in your favorite cities" aria-describedby="basic-addon2" value={this.state.term} onChange={this.onInputChange} />
                 {/* For callback functions from JSX like 'this.onInputChange' that makes a reference to 'this' you must bind the context*/}
                 <div className="input-group-append">

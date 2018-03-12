@@ -30,6 +30,10 @@
   to { transform: rotate(360deg); }
 }
 
-.searchBarTopPadding {
+.topPadding {
     padding-top: 1.5%;
+}
+
+.tableTextAlignLeft {
+    text-align: left;
 }

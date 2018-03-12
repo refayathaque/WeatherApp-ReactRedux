@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './containers/search_bar';
+import WeatherList from './containers/weather_list';
 import './App.css';
 import logo from './logo.svg';
 import logoRedux from './logoRedux.svg';
@@ -14,6 +15,7 @@ class App extends Component {
                     <h1 className="App-title">WeatherApp-ReactRedux</h1>
                 </header>
                 <SearchBar />
+                <WeatherList />
             </div>
         );
     }
