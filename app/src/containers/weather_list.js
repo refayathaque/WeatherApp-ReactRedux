@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import SparklinesChart from '../components/sparklines_chart';
 import '../App.css';
 
 class WeatherList extends Component {
@@ -10,16 +10,22 @@ class WeatherList extends Component {
         // 'weather' is each of the objects in the array 'list'
         // ES6 to Vanilla JS:
         // 'weather => weather.main.temp' -> 'function (weather) { return weather.main.temp; }'
-        console.log(temps);
+        const pressures = cityData.list.map(weather => weather.main.pressures)
+        const humidities = cityData.list.map(weather => weather.main.humidities)
 
         return (
             <tr key={name}>
             {/* When rendering 'td's in react we have to have a key (unique identifier) in the tr */}
                 <td>{name}</td>
                 <td>
-                    <Sparklines height={120} width={180} data={temps}>
-                        <SparklinesLine color="blue" />
-                    </Sparklines>
+                    <SparklinesChart data={temps} color={"blue"} />
+                    {/* Passing in the 'temps' data and the color we want for it as 'props' in the functional component SparklinesChart, we are using a reusable component because we wan't to practice the concept of DRY (don't repeat yourself) */}
+                </td>
+                <td>
+                    <SparklinesChart data={pressures} color={"red"} />
+                </td>
+                <td>
+                    <SparklinesChart data={humidities} color={"orange"} />
                 </td>
             </tr>
         )
