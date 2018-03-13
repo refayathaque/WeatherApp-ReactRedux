@@ -30,10 +30,19 @@
   to { transform: rotate(360deg); }
 }
 
-.topPadding {
-    padding-top: 1.5%;
-}
-
 .tableTextAlignLeft {
     text-align: left;
+}
+
+td, th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.input-group {
+    margin: 20px 0px;
+}
+
+svg {
+    height: 150px;
 }
