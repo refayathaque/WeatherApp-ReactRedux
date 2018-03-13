@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 import '../App.css';
 
 class WeatherList extends Component {
+    renderWeather(cityData) {
+        const name = cityData.city.name
+        const temps = cityData.list.map(weather => weather.main.temp)
+        // 'weather' is each of the objects in the array 'list'
+        // ES6 to Vanilla JS:
+        // 'weather => weather.main.temp' -> 'function (weather) { return weather.main.temp; }'
+        console.log(temps);
+
+        return (
+            <tr key={name}>
+            {/* When rendering 'td's in react we have to have a key (unique identifier) in the tr */}
+                <td>{name}</td>
+                <td>
+                    <Sparklines height={120} width={180} data={temps}>
+                        <SparklinesLine color="blue" />
+                    </Sparklines>
+                </td>
+            </tr>
+        )
+    }
+
     render() {
         return (
             <table className="table table-hover + tableTextAlignLeft">
@@ -15,6 +37,8 @@ class WeatherList extends Component {
                     </tr>
                 </thead>
                 <tbody>
+                    {this.props.weather.map(this.renderWeather)}
+                    {/* 'weather' is an array */}
                 </tbody>
             </table>
         )
