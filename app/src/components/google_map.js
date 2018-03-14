@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class GoogleMap extends Component {
     componentDidMount() {
+    const google = window.google;
+    // Lifecycle method that gets called automatically after the component has been rendered to the screen
         new google.maps.Map(this.refs.map, {
+        // How we create an embedded google map inside of our document, 'this.refs.map' is our reference to the div (an html element) we are returning below with 'render()', the google map will get rendered in the div...this is a way to make third-party libraries that do not know react work with react
             zoom: 12,
             center: {
                 lat: this.props.lat,

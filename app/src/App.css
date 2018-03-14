@@ -44,5 +44,12 @@ td, th {
 }
 
 svg {
-    height: 150px;
+    height: 182.5px;
+    /*150*/
+}
+
+td:first-of-type, td:first-of-type > div {
+/*Find the first td inside of each row and also the child div of the first td of each row and do...*/
+    height: 200px;
+    width: 250px;
 }
