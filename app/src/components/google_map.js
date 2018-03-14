@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// react-google-maps exists as a package, section5lecture69 has code example
+
 class GoogleMap extends Component {
     componentDidMount() {
     const google = window.google;
